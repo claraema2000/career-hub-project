@@ -7,10 +7,7 @@ import {
 import './index.css';
 import Root from './Components/Root/Root';
 import Home from './Components/Home/Home';
-import Jobs from './Components/Jobs/Jobs';
 import AppliedJobs from './Components/AppliedJobs/AppliedJobs';
-import Statistics from './Components/Statistics/Statistics';
-import Blogs from './Components/Blogs/Blogs';
 import ErrorPage from './Components/ErrorPage/ErrorPage';
 import JonDetails from './Components/JobDetails/JobDetails';
 
@@ -25,26 +22,15 @@ const router = createBrowserRouter([
         element: <Home></Home>
       },
       {
-        path: '/jobs',
-        element: <Jobs></Jobs>
-      },
-      {
         path: '/job/:id',
         element: <JonDetails></JonDetails>,
         loader: () => fetch('../jobs.json')
       },
       {
         path: '/applied',
-        element: <AppliedJobs></AppliedJobs>
+        element: <AppliedJobs></AppliedJobs>,
+        loader: () => fetch('../jobs.json')
       },
-      {
-        path: '/statistics',
-        element: <Statistics></Statistics>
-      },
-      {
-        path: '/blogs',
-        element: <Blogs></Blogs>
-      }
     ]
   },
 ]);

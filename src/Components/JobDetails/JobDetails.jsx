@@ -7,11 +7,12 @@ const JonDetails = () => {
 
     const jobs = useLoaderData();
     const { id } = useParams();
-    const job = jobs.find(job => job.id == id);
-    console.log(job);
+    const idInt = parseInt(id);
+    const job = jobs.find(job => job.id === idInt);
+    // console.log(job);
 
     const handleApplyBtn = () => {
-        saveJobApplication(id);
+        saveJobApplication(idInt);
         toast.success("Applied successfully");
     }
 
