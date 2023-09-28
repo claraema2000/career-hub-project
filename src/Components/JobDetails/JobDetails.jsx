@@ -2,6 +2,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { saveJobApplication } from "../../Utility/localStorage";
+import { Helmet } from "react-helmet-async";
 
 const JonDetails = () => {
 
@@ -18,6 +19,9 @@ const JonDetails = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Career Hub | Details {id}</title>
+            </Helmet>
             <div className="h-48 bg-no-repeat text-center" style={{ backgroundImage: 'url(https://i.ibb.co/FVJL1js/bg1.png)' }}>
                 <h2 className="text-4xl font-bold text-indigo-600 my-16">Job Details</h2>
             </div>
@@ -46,7 +50,7 @@ const JonDetails = () => {
                     <button onClick={handleApplyBtn} className="btn w-full mt-3 text-lg text-white font-bold bg-gradient-to-r from-cyan-300 from-5% to-indigo-400 to-40%">Apply Now</button>
                     <ToastContainer
                         position="top-center"
-                        autoClose={5000}
+                        autoClose={1500}
                         hideProgressBar={false}
                         newestOnTop={false}
                         closeOnClick

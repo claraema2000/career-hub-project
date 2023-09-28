@@ -4,6 +4,7 @@ import { getStoredJobApplication } from "../../Utility/localStorage";
 import { GrLocation } from 'react-icons/gr';
 import { HiOutlineCurrencyDollar } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
+import { Helmet } from "react-helmet-async";
 
 const AppliedJobs = () => {
 
@@ -37,6 +38,9 @@ const AppliedJobs = () => {
     }, [])
     return (
         <div className="my-16 mx-8">
+            <Helmet>
+                <title>Career Hub | Applied Jobs</title>
+            </Helmet>
             <div className="text-right my-8">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn m-1 bg-indigo-200">Filter</label>
